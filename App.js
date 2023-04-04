@@ -4,8 +4,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from '@expo/vector-icons/Ionicons';
 
-import GraphPage from './src/components/Navigation/GraphPage';
-import CalculatorPage from './src/components/Navigation/CalculatorPage';
+import GraphPage from './src/Navigation/GraphPage';
+import CalculatorPage from './src/Navigation/CalculatorPage';
 
 
 export default function App() {

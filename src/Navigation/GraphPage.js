@@ -1,5 +1,5 @@
 import React from 'react';
-import CryptopriceNow from '../CryptopriceNow'
+import CryptopriceNow from '../components/CryptopriceNow'
 import { View, StyleSheet } from 'react-native';
 
 
