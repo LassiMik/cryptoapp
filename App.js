@@ -1,20 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { React } from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Ionicons from '@expo/vector-icons/Ionicons';
+
+import GraphPage from './src/components/Navigation/GraphPage';
+import CalculatorPage from './src/components/Navigation/CalculatorPage';
+
 
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  const Tab = createBottomTabNavigator();
+
+  return (
+    <NavigationContainer>
+      <Tab.Navigator screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === 'Home') {
+            iconName = 'md-flash-outline';
+          } else if (route.name === 'Calculator') {
+            iconName = 'md-calculator-outline';
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+
+        tabBarActiveTintColor: 'green',
+        tabBarInactiveTintColor: 'gray',
+      })}>
+        <Tab.Screen name="Home" component={GraphPage} />
+        <Tab.Screen name="Calculator" component={CalculatorPage} />
+      </Tab.Navigator>
+      <StatusBar style="auto" />
+    </NavigationContainer>
+  );
+};
