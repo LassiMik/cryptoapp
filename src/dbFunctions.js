@@ -16,13 +16,7 @@ export const addCryptoToFavorites = async (crypto) => {
     console.error(error);
   }
 };
-/*
-const userId = firebase.auth().currentUser.uid;
-  const cryptoRef = collection(db, 'cryptos');
-  const cryptoSnap = await query(cryptoRef, where('userId', '==', userId));
-  const cryptoData = cryptoSnap.docs.map(doc => ({ id: doc.id, ...doc.data() }));
-  setCryptoData(cryptoData);
-  */
+
 // GET FAVORITE CRYPTOS FROM DATABASE
 
 export const getCryptos = async () => {
