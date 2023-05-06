@@ -39,6 +39,7 @@ export default function CryptopriceNow() {
                 const response = await fetch(`https://rest.coinapi.io/v1/exchangerate/${crypto.asset_id}/EUR`, options);
                 const data = await response.json();
                 const cryptoprice = data.rate;
+                cryptoprice = cryptoprice.toFixed(2);
                 newCryptoData.push({ ...crypto, price: cryptoprice });
             } catch (error) {
                 console.error(error);
