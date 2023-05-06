@@ -1,0 +1,62 @@
+[
+    {
+        "asset_id": "BTC",
+        "name": "Bitcoin"
+    },
+    {
+        "asset_id": "ETH",
+        "name": "Ethereum"
+    },
+    {
+        "asset_id": "Teth",
+        "name": "Tether"
+    },
+    {
+        "asset_id": "BNB",
+        "name": "BNB"
+    },
+    {
+        "asset_id": "USDC",
+        "name": "USD Coin"
+    },
+    {
+        "asset_id": "Doge",
+        "name": "Dogecoin"
+    },
+    {
+        "asset_id": "Poly",
+        "name": "Polygon"
+    },
+    {
+        "asset_id": "Dai",
+        "name": "Dai"
+    },
+    {
+        "asset_id": "Cosm",
+        "name": "Cosmos"
+    },    
+    {
+        "asset_id": "Unisw",
+        "name": "Uniswap"
+    },   
+    {
+        "asset_id": "Mon",
+        "name": "Monero"
+    },   
+    {
+        "asset_id": "ETHC",
+        "name": "Ethereum Classic"
+    },   
+    {
+        "asset_id": "TONC",
+        "name": "Toncoin"
+    }, 
+    {
+        "asset_id": "STELR",
+        "name": "Stellar"
+    }, 
+    {
+        "asset_id": "TRUEU",
+        "name": "True USD"
+    } 
+]
