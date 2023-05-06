@@ -10,3 +10,4 @@ I have used the following technologies in the making of this project:
 - [x] React Native with Expo go for mobile development 
 - [x] Firebase authentication to handle different users and registration
 - [x] Firestore database to handle users saved cryptocurrencies
+- [x] expo/vector-icons and react-navigation for styling
