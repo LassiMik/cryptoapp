@@ -2,7 +2,7 @@
 
 This is a stundent project for learning react native development with expo go. 
 
-![image](https://user-images.githubusercontent.com/112076377/236685206-2a7b32fe-6718-4afd-8d06-7158240f3ba7.png)
+![image](https://user-images.githubusercontent.com/112076377/236685292-bc9f156e-9455-413b-bd25-cf4445e04752.png =250x250)
 
 
 ## Used technologies
