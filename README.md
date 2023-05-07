@@ -2,6 +2,9 @@
 
 This is a stundent project for learning react native development with expo go. 
 
+![image](https://user-images.githubusercontent.com/112076377/236685206-2a7b32fe-6718-4afd-8d06-7158240f3ba7.png)
+
+
 ## Used technologies
 
 - [x] Firebase and Firestore from google
