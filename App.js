@@ -53,12 +53,9 @@ export default function App() {
 
             return <Feather name={iconName} size={size} color={color} />;
           },
-        })}
-        tabBarOptions={{
-          activeTintColor: 'tomato',
-          inactiveTintColor: 'gray',
-        }}
-      >
+          tabBarActiveTintColor: 'tomato',
+          tabBarInactiveTintColor: 'gray',
+        })}>
           <Tab.Screen name="My Cryptos" component={FavoriteCrypto} />
           <Tab.Screen name="Cryptos" component={CalculatorPage} />
         </Tab.Navigator>
