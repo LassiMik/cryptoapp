@@ -32,14 +32,20 @@ export default function CryptopriceNow() {
         "headers": { 'X-CoinAPI-Key': '1A1B9DE6-7EE1-437D-84A2-13ECC9BB8F3D' }
     };
 
+
+
     const fetchFavoriteCryptosPrices = async () => {
         const newCryptoData = [];
+        let maximumAPIcalls = false;
         for (const crypto of cryptoData) {
             try {
                 const response = await fetch(`https://rest.coinapi.io/v1/exchangerate/${crypto.asset_id}/EUR`, options);
                 const data = await response.json();
-                const cryptoprice = data.rate;
-                cryptoprice = cryptoprice.toFixed(2);
+                let cryptoprice;
+                if (data.rate !== undefined) {
+                    cryptoprice = data.rate.toFixed(2);
+                    maximumAPIcalls = true;
+                }
                 newCryptoData.push({ ...crypto, price: cryptoprice });
             } catch (error) {
                 console.error(error);
@@ -65,18 +71,22 @@ export default function CryptopriceNow() {
                 <Text style={styles.refreshButtonText}>Refresh</Text>
             </TouchableOpacity>
             {cryptoData.length > 0 ? (
-                <FlatList
-                    data={cryptoData}
-                    renderItem={renderItem}
-                    keyExtractor={(item) => item.id}
-                />
+                <>
+                    <FlatList
+                        data={cryptoData}
+                        renderItem={renderItem}
+                        keyExtractor={(item) => item.id}
+                    />
+                    <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>
+                        {maximumAPIcalls = true ? 'If price is undefined, you have reached the maximum amount of api calls for 24 hours' : ''}
+                    </Text>
+                </>
             ) : (
                 <>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>You haven't favorited any cryptos.</Text>
                     <Text style={{ fontSize: 20, fontWeight: 'bold', marginBottom: 10 }}>Use the right navigation tab to favorite some cryptos</Text>
                 </>
             )}
-            <Text style={{ fontSize: 24, fontWeight: 'bold', marginBottom: 10 }}>If price is undefined, you have reached the maximum amount of api calls for 24 hours</Text>
         </View>
     );
 }

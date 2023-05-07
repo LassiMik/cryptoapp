@@ -1,14 +1,14 @@
-import { View, StyleSheet, Text, KeyboardAvoidingView, TextInput, TouchableOpacity } from 'react-native';
+import { View, StyleSheet, Text, KeyboardAvoidingView, TextInput, TouchableOpacity, Image } from 'react-native';
 import styles from '../styles/StyleSheet'
 import { useEffect, useState, useContext } from "react";
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from '../../Firebase'
+import loginImage from '../../assets/bitcoin1.png';
 
 
 function Login() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-
 
   //Handle new user signup
   const handleSignUp = () => {
@@ -36,6 +36,10 @@ function Login() {
             style={styles.container}
             behavior='padding'
         >
+            <Image
+                source={loginImage}
+                style={styles.image}
+            />
             <View style={styles.inputContainer}>
                 <TextInput
                     placeholder='Email'

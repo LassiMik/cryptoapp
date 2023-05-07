@@ -1,4 +1,4 @@
-import { getFirestore, doc, setDoc, collection, addDoc, query} from 'firebase/firestore';
+import { getFirestore, doc, setDoc, collection, addDoc, query, where, deleteDoc, and, getDocs} from 'firebase/firestore';
 import { db, auth } from '../Firebase'
 /*import { firebaseApp } from '../App';
 
@@ -23,7 +23,7 @@ export const getCryptos = async () => {
   try {
     const userId = auth.currentUser.uid;
     const cryptoRef = collection(db, 'cryptos');
-    const snapshot = await query(cryptoRef, where('userId', '==', userId));
+    const snapshot = query(cryptoRef, where('userId', '==', userId));
     const fetchedCryptos = [];
     snapshot.forEach((doc) => {
       const fetchedCrypto = { id: doc.id, ...doc.data() };

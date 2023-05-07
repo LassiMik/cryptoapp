@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ActivityIndicator, FlatList, StyleSheet, View, Text, Button, TouchableOpacity } from 'react-native';
+import { ActivityIndicator, FlatList, StyleSheet, View, Text, Button, TouchableOpacity, Alert } from 'react-native';
 import cryptos from '../cryptoList.json'
 import styles from '../styles/StyleSheet'
 import { addCryptoToFavorites } from "../dbFunctions";
@@ -10,6 +10,7 @@ export default function CryptoAssets() {
     const [assets, setAssets] = useState(cryptos);
 
     const userId = auth.currentUser.uid;
+    
 /*
     var options = {
         "method": "GET",
@@ -33,6 +34,7 @@ export default function CryptoAssets() {
                 userId: userId
             };
             addCryptoToFavorites(cryptoData);
+            Alert.alert("Crypto Favorited", `${item.name} has been added to your favorites.`);
         };
         console.log(item.asset_id)
         return (
@@ -52,11 +54,8 @@ export default function CryptoAssets() {
             <FlatList
                 data={assets}
                 renderItem={renderItem}
-                keyExtractor={(item) => item.id}
+                keyExtractor={(item) => item.asset_id}
             />
         </View>
     )
 }
-
-
-

@@ -7,10 +7,10 @@ export default StyleSheet.create({
         justifyContent: 'center'
     },
     inputContainer: {
-        width:'80%'
+        width:'80%',
     },
     input: {
-        backgroundColor: 'white',
+        backgroundColor: '#D3D3D3',
         paddingHorizontal: 15,
         paddingVertical: 10,
         borderRadius: 10,
@@ -73,6 +73,11 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 100,
       },
+      image: {
+        width: 170,
+        height: 170,
+        marginBottom: 40
+      },
       refreshButtonText: {
         fontSize: 16,
         fontWeight: 'bold',
@@ -84,5 +89,8 @@ export default StyleSheet.create({
         paddingVertical: 8,
         marginVertical: 16,
         alignSelf: 'center',
+      },
+      removeButton: {
+        marginLeft: 10,
       },
 })
